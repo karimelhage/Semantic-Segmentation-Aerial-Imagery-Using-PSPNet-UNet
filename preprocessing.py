@@ -174,4 +174,4 @@ class patch_dataset(Dataset):
         return img, msk #return pair of image and mask
     
     def __len__(self):
-        return len(self.images_paths) #if length of full dataset called
+        return len(self.images_path) #if length of full dataset called
