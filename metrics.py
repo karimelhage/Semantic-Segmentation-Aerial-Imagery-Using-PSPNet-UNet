@@ -4,7 +4,7 @@ import torch
 weights_dice = np.load('/Norm_Metrics/weights_dice.npy') #weights of classes
 def accuracy(preds_batch, true_mask_batch, device):  # we simply see how many pixels have the same class label per image
     '''
-    Function to calculate the accuracy during tran/val batch
+    Function to calculate the accuracy during train/val batch
     :param preds_batch: the prediction masks made by a model from a train/val batch
     :param true_mask_batch: the true masks of images in the train/val batch
     :param device: device used ('cpu', 'cuda')
