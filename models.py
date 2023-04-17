@@ -8,7 +8,7 @@ from metrics import f1_dice_score, accuracy
 
 def train_UNet(model, optimizer, epochs, train_dataloader, val_dataloader, scheduler, device='cpu'):
     '''
-
+    Function to try smp U-Net model
     :param model: The input U-Net model to train
     :param optimizer: torch.optim - the optimizer to be used to train
     :param epochs: int - the number of training epochs
@@ -16,7 +16,7 @@ def train_UNet(model, optimizer, epochs, train_dataloader, val_dataloader, sched
     :param val_dataloader: torch.utils.data.DataLoader - the dataloader with the validation images and masks
     :param scheduler: torch.optim.lr_scheduler - the learning rate scheduler to decay over training
     :param device: str - the device to be used.
-    :return:
+    :return: the trained model along with the associated training and validation losses, accuracies, dice f1 scores
     '''
     criterion = nn.CrossEntropyLoss().to(device)
     total_train_losses = []
