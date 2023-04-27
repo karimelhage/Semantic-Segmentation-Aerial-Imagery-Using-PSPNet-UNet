@@ -7,9 +7,11 @@ This projects served as part of a requirement for the Foundations of Deep Learni
 ## Authors
 The project is done by [Karim El Hage](https://github.com/karimelhage), [Ruining Ma](https://github.com/data-rk)
 
-<a href = "https://github.com/karimelhage/Semantic-Segmentation-Aerial-Imagery-Using-PSPNet-UNet">
+<a href = "https://github.com/karimelhage/Semantic-Segmentation-Aerial-Imagery-Using-PSPNet-UNet
+/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo = karimelhage/Semantic-Segmentation-Aerial-Imagery-Using-PSPNet-UNet"/>
 </a>
+
 
 ## Project Content
 1 - Understanding of the Class Distribution within the images
