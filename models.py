@@ -6,7 +6,7 @@ import torch.nn as nn
 from metrics import weighted_f1, accuracy
 
 
-def train_UNet(model, optimizer, epochs, train_dataloader, val_dataloader, scheduler, device='cpu'):
+def train_smp_model(model, optimizer, epochs, train_dataloader, val_dataloader, scheduler, device='cpu', model_name = 'PSP'):
     '''
     Function to train smp U-Net model
 
@@ -112,7 +112,7 @@ def train_UNet(model, optimizer, epochs, train_dataloader, val_dataloader, sched
         # Saving the best model
         if np.mean(val_f1) > min_val_f1:
             torch.save(model.state_dict(),
-                       f'Models/Unet_pat_mid' + str(epoch) + '.pt')
+                       f'Models/{model_name}_pat_mid_' + str(epoch) + '.pt')
             min_val_f1 = np.mean(val_f1)
 
     return model, total_train_losses, total_train_accuracy, total_train_f1, \
