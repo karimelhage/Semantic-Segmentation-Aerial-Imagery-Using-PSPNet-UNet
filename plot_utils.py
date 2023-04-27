@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
-
-
+import cv2
+from PIL import Image #For Image Processing
+import torch
+import torchvision.transforms as transforms
 def plot_losses(total_train_losses, total_val_losses, model_name='PSPNet'):
     '''
     Function to plot the losses found during model training
@@ -38,3 +40,33 @@ def plot_predictions(img, msk, pred):
     axarr[2].imshow(pred, cmap='tab20')
     axarr[2].set_title('Prediction Mask')
     plt.show()
+
+def make_pred(model, sample_image_paths, sample_mask_paths, index):
+    '''
+    Function to make a generate a prediction mask from an image
+    :param model: the model to be used to make a prediction
+    :param sample_image_paths: list with the paths to the images
+    :param sample_mask_paths: list with the paths of the true mask
+    :param index: index of the image/mask with the file to be extracted
+    :return: image, true mask, prediction mask
+    '''
+    model.cpu()
+    model.eval()
+
+    transform = transforms.Compose([transforms.Resize([1024, 1024]),
+                                    transforms.ToTensor()])
+
+    pred_image = cv2.imread(sample_image_paths[index], 1)
+    pred_image = Image.fromarray(pred_image)
+    test_image_size = pred_image.size
+    img = transform(pred_image)
+    img = img.unsqueeze(0)
+    output = model(img)
+    output = torch.argmax(output, dim=1).squeeze(0)  # taking max prob of class form predictions per pixel in mask
+    img = cv2.resize(np.asarray(pred_image, dtype='uint8'), (test_image_size[0], test_image_size[1]),
+                     interpolation=cv2.INTER_NEAREST)
+    output = cv2.resize(np.asarray(output, dtype='uint8'), (test_image_size[0], test_image_size[1]),
+                        interpolation=cv2.INTER_NEAREST)
+    mask = Image.open(sample_mask_paths[index])
+
+    return img, mask, output
