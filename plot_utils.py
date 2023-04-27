@@ -69,4 +69,4 @@ def make_pred(model, sample_image_paths, sample_mask_paths, index):
                         interpolation=cv2.INTER_NEAREST)
     mask = Image.open(sample_mask_paths[index])
 
-    return img, mask, output
+    return pred_image, mask, output
