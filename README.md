@@ -1,7 +1,9 @@
 # Semantic Segmentation of Aeriel Images from Hurricane Harvery Using PSPNET
 
 
-This projects served as part of a requirement for the Foundations of Deep Learning at CentraleSupélec. The task is a semantic segmentation one requiring not only the prediction of of 26 different possible classes within an image but to generate masks to indicate where the classes exist within the images. Since the dataset is of images from Hurricane Harvey, the main objective would be to accurately determine segments of images that have been affected by flooding and identify the objects in the vicintiy of the flood. The project was a challenging one and a successful deployment could yield to an assistance in quicker indentification of flood zones to dispatch rescue teams.
+This projects served as part of a requirement for the Foundations of Deep Learning at CentraleSupélec. The task is a semantic segmentation one requiring not only the prediction of of 26 different possible classes within an image but to generate masks to indicate where the classes exist within the images. Since the dataset is of images from Hurricane Harvey, the main objective would be to accurately determine segments of images that have been affected by flooding and identify the objects in the vicintiy of the flood. The project was a challenging one and a successful deployment could yield to an assistance in quicker indentification of flood zones to dispatch rescue teams. 
+
+**Note: Only sample images have been added to this repository for illustration. Actual training was done on full dataset**
 
 ## Authors
 The project is done by [Karim El Hage](https://github.com/karimelhage), [Ruining Ma](https://github.com/data-rk)
