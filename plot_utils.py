@@ -3,6 +3,8 @@ import cv2
 from PIL import Image #For Image Processing
 import torch
 import torchvision.transforms as transforms
+import numpy as np
+
 def plot_losses(total_train_losses, total_val_losses, model_name='PSPNet'):
     '''
     Function to plot the losses found during model training
