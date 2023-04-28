@@ -31,5 +31,5 @@ It has been observed during training that several training masks do not reflect 
 
 
 ## Cite
-A special shoutout to Dr. Sreenivas Bhattiprolu who's learning material on Image Augmentation and Semantic Segmentation have been a true help to understanding the application of Semantic Segmentation. Link to to the repo: https://github.com/bnsreenu/python_for_microscopists
+A special shoutout to Dr. Sreenivas Bhattiprolu who's learning material on Image Augmentation and Semantic Segmentation have been a true help to understanding the application of Semantic Segmentation. Link to his repo: https://github.com/bnsreenu/python_for_microscopists
 
